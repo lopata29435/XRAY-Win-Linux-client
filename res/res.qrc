@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icon.ico</file>
+        <file>PowerButton_Error.svg</file>
+        <file>PowerButton_On.svg</file>
+        <file>PowerButton_Off.svg</file>
+        <file>CB_logo_dark.svg</file>
+        <file>CB_logo_dark.png</file>
+    </qresource>
+    <qresource prefix="/images"/>
+    <qresource prefix="/sounds"/>
+    <qresource prefix="/">
+        <file>icon.ico</file>
+    </qresource>
+</RCC>

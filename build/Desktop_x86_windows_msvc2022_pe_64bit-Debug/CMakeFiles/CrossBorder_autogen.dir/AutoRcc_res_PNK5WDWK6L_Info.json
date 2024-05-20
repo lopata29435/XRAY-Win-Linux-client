@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/CrossBorder_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Projects/QTprojects/CrossBorder",
+	"CMAKE_SOURCE_DIR" : "D:/Projects/QTprojects/CrossBorder",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/CrossBorder_autogen/include",
+	"INPUTS" : 
+	[
+		"D:/Projects/QTprojects/CrossBorder/res/PowerButton_Error.svg",
+		"D:/Projects/QTprojects/CrossBorder/res/PowerButton_Off.svg",
+		"D:/Projects/QTprojects/CrossBorder/res/PowerButton_On.svg",
+		"D:/Projects/QTprojects/CrossBorder/res/output.ico"
+	],
+	"LOCK_FILE" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/CMakeFiles/CrossBorder_autogen.dir/AutoRcc_res_PNK5WDWK6L_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "res" ],
+	"OUTPUT_CHECKSUM" : "PNK5WDWK6L",
+	"OUTPUT_NAME" : "qrc_res.cpp",
+	"RCC_EXECUTABLE" : "D:/Programs/QT/6.6.3/msvc2019_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/CMakeFiles/CrossBorder_autogen.dir/AutoRcc_res_PNK5WDWK6L_Used.txt",
+	"SOURCE" : "D:/Projects/QTprojects/CrossBorder/res/res.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

@@ -1,0 +1,151 @@
+{
+  "dns": {
+    "disableFallback": true,
+    "servers": [
+      {
+        "address": "https://dns.google/dns-query",
+        "domains": [],
+        "queryStrategy": ""
+      },
+      {
+        "address": "localhost",
+        "domains": [],
+        "queryStrategy": ""
+      }
+    ],
+    "tag": "dns"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 2080,
+      "protocol": "socks",
+      "settings": {
+        "udp": true
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true,
+        "metadataOnly": false,
+        "routeOnly": true
+      },
+      "tag": "socks-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 2081,
+      "protocol": "http",
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled": true,
+        "metadataOnly": false,
+        "routeOnly": true
+      },
+      "tag": "http-in"
+    }
+  ],
+  "log": {
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "domainStrategy": "AsIs",
+      "flow": null,
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "166.1.160.198",
+            "port": 443,
+            "users": [
+              {
+                "encryption": "none",
+                "flow": "xtls-rprx-vision",
+                "id": "32257e24-f20e-4ef5-8f9c-abcc89a37d7e"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "realitySettings": {
+          "fingerprint": "chrome",
+          "publicKey": "_bY-dWcKV5i77s-hCDwjUvyKKJtsM14rP2kFNDk2oUI",
+          "serverName": "www.microsoft.com",
+          "shortId": "dcd60dad20dc585d",
+          "spiderX": ""
+        },
+        "security": "reality"
+      },
+      "tag": "proxy"
+    },
+    {
+      "domainStrategy": "",
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "domainStrategy": "",
+      "protocol": "freedom",
+      "tag": "bypass"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    },
+    {
+      "protocol": "dns",
+      "proxySettings": {
+        "tag": "proxy",
+        "transportLayer": true
+      },
+      "settings": {
+        "address": "8.8.8.8",
+        "network": "tcp",
+        "port": 53,
+        "userLevel": 1
+      },
+      "tag": "dns-out"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "1": {
+        "connIdle": 30
+      }
+    },
+    "system": {
+      "statsOutboundDownlink": true,
+      "statsOutboundUplink": true
+    }
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "inboundTag": [
+          "socks-in",
+          "http-in"
+        ],
+        "outboundTag": "dns-out",
+        "port": "53",
+        "type": "field"
+      },
+      {
+        "outboundTag": "proxy",
+        "port": "0-65535",
+        "type": "field"
+      }
+    ]
+  },
+  "stats": {}
+}
