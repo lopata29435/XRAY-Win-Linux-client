@@ -12,8 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setStyleSheet("background-color: #020A18;");
     PowerButton *powerButton = new PowerButton(this);
-    powerButton->setGeometry(140, 168, 400, 400);
-    connect(powerButton, &PowerButton::toggled, this, &MainWindow::OnPowerButtonToggled);
+    powerButton->setGeometry(104, 132, 192, 192);
+    connect(powerButton, &PowerButton::toggled, this, [=](bool on) {
+        OnPowerButtonToggled(on, powerButton);
+    });
 }
 
 MainWindow::~MainWindow()
@@ -21,23 +23,25 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::OnPowerButtonToggled(bool on)
+void MainWindow::OnPowerButtonToggled(bool on, PowerButton *powerButton)
 {
     QString sourceFilePath = __FILE__;
     QString appDir = sourceFilePath.left(sourceFilePath.lastIndexOf(QDir::separator()) + 1);
 
     if (on) {
-        OnButtonClicked(appDir);
+        OnButtonClicked(appDir, powerButton);
     } else {
-        OffButtonClicked();
+        OffButtonClicked(powerButton);
     }
 }
 
-void MainWindow::OnButtonClicked(const QString& appDir)
+void MainWindow::OnButtonClicked(const QString& appDir, PowerButton *powerButton)
 {
+    powerButton->SetState(Connecting);
     QString xrayPath = QDir(appDir).filePath("Xray/xray-core/xray.exe");
 
     if (!QFile::exists(xrayPath)) {
+        powerButton->SetState(Error);
         qDebug() << "Не удалось найти исполняемый файл Xray по пути:" << xrayPath;
         return;
     }
@@ -51,20 +55,24 @@ void MainWindow::OnButtonClicked(const QString& appDir)
 
     if (!m_xrayProcess->waitForStarted()) {
         qDebug() << "Ошибка при запуске процесса Xray";
+        powerButton->SetState(Error);
         return;
     }
 
     qDebug() << "Процесс Xray успешно запущен";
+    powerButton->SetState(On);
     SetSystemProxy(2081, 2080);
 }
 
-void MainWindow::OffButtonClicked()
+void MainWindow::OffButtonClicked(PowerButton *powerButton)
 {
     if (m_xrayProcess && m_xrayProcess->state() == QProcess::Running) {
         ClearSystemProxy();
         m_xrayProcess->kill(); // Или m_xrayProcess->terminate();
         qDebug() << "Процесс Xray завершен";
+        powerButton->SetState(Off);
     } else {
         qDebug() << "Процесс Xray не запущен";
+        powerButton->SetState(Error);
     }
 }

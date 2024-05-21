@@ -20,11 +20,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void OnPowerButtonToggled(bool on);
+    void OnPowerButtonToggled(bool on, PowerButton *powerButton);
 private:
     Ui::MainWindow *ui;
     QProcess *m_xrayProcess;
-    void OnButtonClicked(const QString& appDir);
-    void OffButtonClicked();
+    void OnButtonClicked(const QString& appDir, PowerButton *powerButton);
+    void OffButtonClicked(PowerButton *powerButton);
 };
 #endif // MAINWINDOW_H

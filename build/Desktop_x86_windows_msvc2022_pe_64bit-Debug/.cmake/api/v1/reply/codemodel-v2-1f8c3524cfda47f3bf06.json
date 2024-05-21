@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-8fa275b33f1789d8cf1e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CrossBorder",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CrossBorder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CrossBorder-Debug-08c8ecc3088faf418ea0.json",
+					"name" : "CrossBorder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CrossBorder_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CrossBorder_autogen-Debug-50e4bce20bbcffc563b7.json",
+					"name" : "CrossBorder_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CrossBorder_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CrossBorder_autogen_timestamp_deps-Debug-06a82d85c0aa19ca2398.json",
+					"name" : "CrossBorder_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug",
+		"source" : "D:/Projects/QTprojects/CrossBorder"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

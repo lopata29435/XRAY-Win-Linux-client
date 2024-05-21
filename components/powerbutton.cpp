@@ -5,9 +5,11 @@
 #include <QSvgRenderer>
 
 PowerButton::PowerButton(QWidget *parent)
-    : QWidget(parent), isOn(false)
+    : QWidget(parent)
+    , isOn(false)
+    , state_(Off)
 {
-    setFixedSize(120, 120);
+    setFixedSize(192, 192);
 }
 
 void PowerButton::paintEvent(QPaintEvent *event)
@@ -15,16 +17,33 @@ void PowerButton::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
 
-    // Рисуем круг
+    QString buttonIcon;
+    switch(state_){
+    case On:
+        buttonIcon = ":/buttons/Buttons/PowerButton_On.svg";
+        break;
+    case Off:
+        buttonIcon = ":/buttons/Buttons/PowerButton_Off.svg";
+        break;
+    case Connecting:
+        buttonIcon = ":/buttons/Buttons/PowerButton_Connecting.svg";
+        break;
+    case Error:
+        buttonIcon = ":/buttons/Buttons/PowerButton_Error.svg";
+        break;
+    default:
+        buttonIcon = ":/buttons/Buttons/PowerButton_Off.svg";
+        break;
+    }
+
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor("#020A18"));
-    painter.drawEllipse(0, 0, 120, 120);
+    painter.setBrush(QColor(0x020A18));
+    painter.drawEllipse((192 - 120) / 2, (192 - 120) / 2, 120, 120);
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
 
-    // Рисуем иконку в центре
-    QSvgRenderer svgRenderer(isOn ? QString(":/icons/PowerButton_On.svg") : QString(":/icons/PowerButton_Off.svg"));
-    QRect iconRect((120 - 36) / 2 , (120 - 36) / 2, 36, 36);
-    svgRenderer.render(&painter, iconRect);
+    QSvgRenderer svgRendererButton(buttonIcon);
+    QRect iconRectButton((192 - 36) / 2 , (192 - 36) / 2, 36, 36);
+    svgRendererButton.render(&painter, iconRectButton);
 }
 
 void PowerButton::mousePressEvent(QMouseEvent *event)
@@ -34,4 +53,15 @@ void PowerButton::mousePressEvent(QMouseEvent *event)
         emit toggled(isOn);
         update();
     }
+}
+
+void PowerButton::SetState(State state)
+{
+    state_ = state;
+    update();
+}
+
+State PowerButton::GetState() const
+{
+    return state_;
 }
