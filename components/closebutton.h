@@ -9,7 +9,14 @@ class CloseButton : public QWidget
 public:
     explicit CloseButton(QWidget *parent = nullptr);
 
-signals:
+protected:
+    void paintEvent(QPaintEvent *event) ;
+    void enterEvent(QEnterEvent *event) ;
+    void leaveEvent(QEvent *event) ;
+    void mousePressEvent(QMouseEvent *event) ;
+
+private:
+    bool isHovered;
 };
 
 #endif // CLOSEBUTTON_H

@@ -10,6 +10,8 @@
         <file>Buttons/PowerButton_Error.svg</file>
         <file>Buttons/PowerButton_Off.svg</file>
         <file>Buttons/PowerButton_On.svg</file>
+        <file>Buttons/CloseButton.svg</file>
+        <file>Buttons/MinimizeButton.svg</file>
     </qresource>
     <qresource prefix="/ui">
         <file>UI/Background.svg</file>

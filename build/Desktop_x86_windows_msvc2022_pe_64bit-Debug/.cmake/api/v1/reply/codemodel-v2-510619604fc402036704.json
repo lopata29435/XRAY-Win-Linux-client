@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-4ce6887f689a65358783.json",
+					"jsonFile" : "directory-.-Debug-93bc541be712c6a36474.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "CrossBorder::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-CrossBorder-Debug-e6f1abbe4546a6633a5c.json",
+					"jsonFile" : "target-CrossBorder-Debug-d80b9ed4912fbd806687.json",
 					"name" : "CrossBorder",
 					"projectIndex" : 0
 				},

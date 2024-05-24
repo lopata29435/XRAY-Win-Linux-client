@@ -1,11 +1,12 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "components/closebutton.h"
+#include "components/minimizebutton.h"
 #include "3rdparty/v2/components/proxy/QvProxyConfigurator.hpp"
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QColor>
-#include <QLabel>
 #include <QGraphicsBlurEffect>
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -17,29 +18,24 @@
 #include <QUrl>
 #include <QHBoxLayout>
 #include <QSvgRenderer>
+#include <QMouseEvent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowFlags(Qt::FramelessWindowHint); // Удаление стандартной рамки окна
+    setWindowFlags(Qt::NoDropShadowWindowHint); // Удаление стандартной рамки окна
+
 
     // Создание кастомных кнопок:
-    QPushButton *closeButton = new QPushButton("Закрыть", this);
-    QPushButton *minimizeButton = new QPushButton("Свернуть", this);
-
-    // Настройка стилей кнопок:
-    closeButton->setStyleSheet("QPushButton { background-color: red; }");
-    minimizeButton->setStyleSheet("QPushButton { background-color: blue; }");
+    CloseButton *closeButton = new CloseButton(this);
+    MinimizeButton *minimizeButton = new MinimizeButton(this);
 
     // Установка положения кнопок и их размеров:
-    closeButton->setGeometry(10, 10, 50, 30);
-    minimizeButton->setGeometry(70, 10, 50, 30);
+    closeButton->setGeometry(376, 0, 24, 24);
+    minimizeButton->setGeometry(352, 0, 24, 24);
 
-    // Соединение сигналов и слотов:
-    connect(closeButton, &QPushButton::clicked, this, &MainWindow::close);
-    connect(minimizeButton, &QPushButton::clicked, this, &MainWindow::showMinimized);
 
     this->setStyleSheet("background-image: url(:/ui/UI/Background.svg);");
 
@@ -99,6 +95,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(powerButton, &PowerButton::toggled, this, [=](bool on) {
         OnPowerButtonToggled(on, powerButton);
     });
+    statusLabel = SetStatusLabel("Подключиться");
 }
 
 MainWindow::~MainWindow()
@@ -120,6 +117,7 @@ void MainWindow::OnPowerButtonToggled(bool on, PowerButton *powerButton)
 
 void MainWindow::OnButtonClicked(const QString& appDir, PowerButton *powerButton)
 {
+    statusLabel->setText("Подключение");
     powerButton->SetState(Connecting);
     ShowConnectAnimation();
 
@@ -130,7 +128,8 @@ void MainWindow::OnButtonClicked(const QString& appDir, PowerButton *powerButton
         if (!QFile::exists(xrayPath)) {
             powerButton->SetState(Error);
             ShowErrorAnimation();
-            qDebug() << "Не удалось найти исполняемый файл Xray по пути:" << xrayPath;
+            QString error = "Не удалось найти исполняемый файл Xray по пути:" + xrayPath;
+            statusLabel->setText(error);
             return;
         }
 
@@ -142,13 +141,13 @@ void MainWindow::OnButtonClicked(const QString& appDir, PowerButton *powerButton
         m_xrayProcess->start(xrayPath, arguments);
 
         if (!m_xrayProcess->waitForStarted()) {
-            qDebug() << "Ошибка при запуске процесса Xray";
+            statusLabel->setText("Ошибка при запуске процесса Xray");
             powerButton->SetState(Error);
             ShowErrorAnimation();
             return;
         }
 
-        qDebug() << "Процесс Xray успешно запущен";
+        statusLabel->setText("Подключено");
         powerButton->SetState(On);
         ShowOnAnimation();
         //TODO: надо обрабатывать ошибки подъема системного прокси
@@ -162,13 +161,13 @@ void MainWindow::OffButtonClicked(PowerButton *powerButton)
     if (m_xrayProcess && m_xrayProcess->state() == QProcess::Running) {
         ClearSystemProxy();
         m_xrayProcess->kill(); // Или m_xrayProcess->terminate();
-        qDebug() << "Процесс Xray завершен";
+        statusLabel->setText("Подключиться");
         powerButton->SetState(Off);
         HideConnectAnimation();
         HideErrorAnimation();
         HideOnAnimation();
     } else {
-        qDebug() << "Процесс Xray не запущен";
+        statusLabel->setText("Процесс Xray не запущен");
         powerButton->SetState(Error);
         ShowErrorAnimation();
     }
@@ -242,4 +241,15 @@ QString MainWindow::loadFont(const QString &fontPath){
         return QString();
     }
     return QFontDatabase::applicationFontFamilies(fontId).at(0);
+}
+
+QLabel* MainWindow::SetStatusLabel(const QString &label) {
+    QString openSans = loadFont(":/fonts/Fonts/OpenSans/OpenSans-SemiBold.ttf");
+    QLabel *titleLabel = new QLabel(label, this);
+    QFont openSansFont(openSans, 16);
+    titleLabel->setFont(openSansFont);
+    titleLabel->setStyleSheet("color: white;");
+    titleLabel->setAlignment(Qt::AlignCenter);
+    titleLabel->setGeometry(120, 348, 160, 25);
+    return titleLabel;
 }

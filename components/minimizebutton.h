@@ -9,7 +9,14 @@ class MinimizeButton : public QWidget
 public:
     explicit MinimizeButton(QWidget *parent = nullptr);
 
-signals:
+protected:
+    void paintEvent(QPaintEvent *event) ;
+    void enterEvent(QEnterEvent *event) ;
+    void leaveEvent(QEvent *event) ;
+    void mousePressEvent(QMouseEvent *event) ;
+
+private:
+    bool isHovered;
 };
 
 #endif // MINIMIZEBUTTON_H

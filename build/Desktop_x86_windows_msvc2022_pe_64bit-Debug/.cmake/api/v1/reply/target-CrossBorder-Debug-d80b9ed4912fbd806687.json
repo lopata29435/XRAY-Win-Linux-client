@@ -78,13 +78,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 64,
+				"line" : 65,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 48,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
@@ -292,7 +292,7 @@
 			{
 				"command" : 11,
 				"file" : 1,
-				"line" : 45,
+				"line" : 46,
 				"parent" : 0
 			}
 		]
@@ -432,18 +432,19 @@
 				12,
 				14,
 				16,
-				18
+				18,
+				20
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "CrossBorder_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "CrossBorder_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "CrossBorder_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "CrossBorder::@6890427a1f51a3e7e1df",
@@ -582,7 +583,8 @@
 				12,
 				14,
 				16,
-				18
+				18,
+				20
 			]
 		},
 		{
@@ -597,7 +599,8 @@
 				13,
 				15,
 				17,
-				19
+				19,
+				21
 			]
 		},
 		{
@@ -605,15 +608,15 @@
 			"sourceIndexes" : 
 			[
 				4,
-				20,
-				21
+				22,
+				23
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				22
+				24
 			]
 		}
 	],
@@ -724,6 +727,17 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "components/closebutton.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "components/minimizebutton.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "components/minimizebutton.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

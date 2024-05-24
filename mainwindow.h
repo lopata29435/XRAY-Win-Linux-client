@@ -1,12 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QProcess>
 #include "components/powerbutton.h"
 #include "components/onanimation.h"
 #include "components/connectanimation.h"
 #include "components/erroranimation.h"
+
+#include <QMainWindow>
+#include <QProcess>
+#include <QLabel>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,7 +36,9 @@ private:
     void ShowErrorAnimation();
     void HideErrorAnimation();
     void SetBackgroundColor(const QColor &color);
+    QLabel* SetStatusLabel(const QString &label);
     QString loadFont(const QString &fontPath);
+
 
 private:
     Ui::MainWindow *ui;
@@ -41,6 +46,8 @@ private:
     OnAnimation *onAnimation = nullptr;
     ConnectAnimation *connectAnimation = nullptr;
     ErrorAnimation *errorAnimation = nullptr;
+    QPoint m_dragStartPosition;
+    QLabel* statusLabel = nullptr;
 };
 
 #endif // MAINWINDOW_H
