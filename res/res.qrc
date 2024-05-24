@@ -1,24 +1,66 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>icon.ico</file>
-        <file>PowerButton_Error.svg</file>
-        <file>PowerButton_On.svg</file>
-        <file>PowerButton_Off.svg</file>
-        <file>CB_logo_dark.svg</file>
-        <file>CB_logo_dark.png</file>
+        <file>Icons/icon.ico</file>
+        <file>Icons/TgSupport.svg</file>
     </qresource>
     <qresource prefix="/images"/>
     <qresource prefix="/sounds"/>
-    <qresource prefix="/">
-        <file>icon.ico</file>
-    </qresource>
+    <qresource prefix="/"/>
     <qresource prefix="/buttons">
         <file>Buttons/PowerButton_Error.svg</file>
         <file>Buttons/PowerButton_Off.svg</file>
         <file>Buttons/PowerButton_On.svg</file>
-        <file>Buttons/PowerButtonBackground_Error.svg</file>
-        <file>Buttons/PowerButtonBackground_Off.svg</file>
-        <file>Buttons/PowerButtonBackground_On.svg</file>
-        <file>Buttons/PowerButtonBackground_Process.svg</file>
+    </qresource>
+    <qresource prefix="/ui">
+        <file>UI/Background.svg</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>fonts/Unbounded/Unbounded-Black.ttf</file>
+        <file>fonts/Unbounded/Unbounded-Bold.ttf</file>
+        <file>fonts/Unbounded/Unbounded-ExtraBold.ttf</file>
+        <file>fonts/Unbounded/Unbounded-ExtraLight.ttf</file>
+        <file>fonts/Unbounded/Unbounded-Light.ttf</file>
+        <file>fonts/Unbounded/Unbounded-Regular.ttf</file>
+        <file>fonts/Unbounded/Unbounded-SemiBold.ttf</file>
+        <file>fonts/Unbounded/Unbounded-VariableFont_wght.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-Bold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-BoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-ExtraBold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-ExtraBoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-Italic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-Light.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-LightItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-Medium.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-MediumItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-Regular.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-SemiBold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_Condensed-SemiBoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-Bold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-BoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-ExtraBold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-ExtraBoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-Italic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-Light.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-LightItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-Medium.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-MediumItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-Regular.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-SemiBold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans_SemiCondensed-SemiBoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-Bold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-BoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-ExtraBold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-Italic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-Italic-VariableFont_wdth,wght.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-Light.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-LightItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-Medium.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-MediumItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-Regular.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-SemiBold.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-SemiBoldItalic.ttf</file>
+        <file>Fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf</file>
+        <file>Fonts/Unbounded/Unbounded-Medium.ttf</file>
     </qresource>
 </RCC>

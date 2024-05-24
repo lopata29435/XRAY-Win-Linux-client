@@ -1,9 +1,12 @@
 D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/CrossBorder_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/Projects/QTprojects/CrossBorder/mainwindow.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/QProcess \
+  D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/QPropertyAnimation \
+  D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/QRectF \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/q20functional.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/q20memory.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/q20type_traits.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/q23utility.h \
+  D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qabstractanimation.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qalgorithms.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qanystringview.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qarraydata.h \
@@ -31,6 +34,7 @@ D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-D
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qdarwinhelpers.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qdatastream.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qdebug.h \
+  D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qeasingcurve.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qexceptionhandling.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qflags.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qfloat16.h \
@@ -68,6 +72,7 @@ D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-D
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qpoint.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qprocess.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qprocessordetection.h \
+  D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qpropertyanimation.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qrect.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qrefcount.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qscopedpointer.h \
@@ -112,6 +117,7 @@ D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-D
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qtypes.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qutf8stringview.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qvariant.h \
+  D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qvariantanimation.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qvarlengtharray.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qversiontagging.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtCore/qxptype_traits.h \
@@ -149,4 +155,7 @@ D:/Projects/QTprojects/CrossBorder/build/Desktop_x86_windows_msvc2022_pe_64bit-D
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/Programs/QT/6.6.3/msvc2019_64/include/QtWidgets/qwidget.h \
+  D:/Projects/QTprojects/CrossBorder/components/connectanimation.h \
+  D:/Projects/QTprojects/CrossBorder/components/erroranimation.h \
+  D:/Projects/QTprojects/CrossBorder/components/onanimation.h \
   D:/Projects/QTprojects/CrossBorder/components/powerbutton.h

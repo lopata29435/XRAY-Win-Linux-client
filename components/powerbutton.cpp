@@ -26,7 +26,7 @@ void PowerButton::paintEvent(QPaintEvent *event)
         buttonIcon = ":/buttons/Buttons/PowerButton_Off.svg";
         break;
     case Connecting:
-        buttonIcon = ":/buttons/Buttons/PowerButton_Connecting.svg";
+        buttonIcon = ":/buttons/Buttons/PowerButton_Off.svg";
         break;
     case Error:
         buttonIcon = ":/buttons/Buttons/PowerButton_Error.svg";

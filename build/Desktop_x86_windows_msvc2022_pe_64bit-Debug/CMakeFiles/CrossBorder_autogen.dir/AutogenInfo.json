@@ -378,6 +378,36 @@
 			null
 		],
 		[
+			"D:/Projects/QTprojects/CrossBorder/components/closebutton.h",
+			"MU",
+			"XDQFSXMG3O/moc_closebutton.cpp",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/connectanimation.h",
+			"MU",
+			"XDQFSXMG3O/moc_connectanimation.cpp",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/erroranimation.h",
+			"MU",
+			"XDQFSXMG3O/moc_erroranimation.cpp",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/minimizebutton.h",
+			"MU",
+			"XDQFSXMG3O/moc_minimizebutton.cpp",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/onanimation.h",
+			"MU",
+			"XDQFSXMG3O/moc_onanimation.cpp",
+			null
+		],
+		[
 			"D:/Projects/QTprojects/CrossBorder/components/powerbutton.h",
 			"MU",
 			"XDQFSXMG3O/moc_powerbutton.cpp",
@@ -451,6 +481,31 @@
 	[
 		[
 			"D:/Projects/QTprojects/CrossBorder/3rdparty/v2/components/proxy/QvProxyConfigurator.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/closebutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/connectanimation.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/erroranimation.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/minimizebutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Projects/QTprojects/CrossBorder/components/onanimation.cpp",
 			"MU",
 			null
 		],

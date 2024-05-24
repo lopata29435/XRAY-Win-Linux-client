@@ -34,6 +34,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(CrossBorder
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        components/onanimation.h components/onanimation.cpp
+        components/erroranimation.h components/erroranimation.cpp
+        components/connectanimation.h components/connectanimation.cpp
+        components/closebutton.h components/closebutton.cpp
+        components/minimizebutton.h components/minimizebutton.cpp
     )
 endif()
 
